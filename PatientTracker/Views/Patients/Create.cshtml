@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PatientTracker.Models.Patient
+
+<h4>Add a new task</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description)
+
+    @Html.Label("Select doctor")
+    @Html.DropDownList("DoctorId")
+
+    <input type="submit" value="Add new patient" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all patients", "Index")</p>
