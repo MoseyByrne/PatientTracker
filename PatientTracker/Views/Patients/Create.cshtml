@@ -8,12 +8,17 @@
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Description)
-    @Html.TextBoxFor(model => model.Description)
+  @Html.LabelFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description)
 
-    @Html.Label("Select doctor")
-    @Html.DropDownList("DoctorId")
+  @Html.LabelFor(m => m.Birthdate)
+  @Html.TextBoxFor(m => m.Birthdate, new {type="date", @class="form-control"})
 
-    <input type="submit" value="Add new patient" class="btn btn-default" />
+
+  @Html.Label("Select doctor")
+  @Html.DropDownList("DoctorId")
+
+
+  <input type="submit" value="Add new patient" class="btn btn-default" />
 }
 <p>@Html.ActionLink("Show all patients", "Index")</p>
