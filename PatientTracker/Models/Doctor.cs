@@ -2,19 +2,22 @@ using System.Collections.Generic;
 
 namespace PatientTracker.Models
 {
-    public class Doctor
+  public class Doctor
+  {
+    public Doctor()
     {
-        public Doctor()
-        {
-            this.JoinEntities = new HashSet<DoctorPatient>();
-        }
+      this.JoinEntities = new HashSet<DoctorPatient>();
 
-        public int DoctorId { get; set; }
+      // this.JoinEntities2 = new HashSet<DoctorSpecialty>();
 
-        public string Name { get; set; }
-
-        public string Specialty { get; set; }
-
-        public virtual ICollection<DoctorPatient> JoinEntities { get; set; }
     }
+
+    public int DoctorId { get; set; }
+
+    public string Name { get; set; }
+
+    public string Specialty { get; set; }
+
+    public virtual ICollection<DoctorPatient> JoinEntities { get; set; }
+  }
 }
