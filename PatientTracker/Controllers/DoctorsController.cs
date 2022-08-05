@@ -38,7 +38,9 @@ namespace PatientTracker.Controllers
 
     public ActionResult Details(int id)
     {
-      var thisDoctor = _db.Doctors.Include(doctor => doctor.JoinEntities).ThenInclude(join => join.Patient).FirstOrDefault(doctor => doctor.DoctorId == id);
+      var thisDoctor = _db.Doctors
+      .Include(doctor => doctor.JoinEntities)
+      .ThenInclude(join => join.Patient).FirstOrDefault(doctor => doctor.DoctorId == id);
       return View(thisDoctor);
     }
 
